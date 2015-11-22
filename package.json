@@ -1,0 +1,16 @@
+{
+  "name": "typescript_requirejs_workflow",
+    "version": "1.0.0",
+    "description": "A boilerplate code for Typescript, knockout, ",
+  "dependencies": {},
+  "devDependencies": {
+    "event-stream": "^3.3.2",
+    "gulp": "^3.9.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-print": "^2.0.1",
+    "gulp-requirejs": "^0.1.3",
+    "gulp-typescript": "^2.9.2",
+    "run-sequence": "^1.1.4"
+  },
+  "license": "MIT"
+}
