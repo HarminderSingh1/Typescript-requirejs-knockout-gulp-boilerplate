@@ -10,8 +10,6 @@
         }
     </style>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.js"></script>
-    <script src="./scripts/generated/main/config.js"></script>
 
     <!--Uncomment the following line to include release version-->
     <!--<script src="./scripts/generated/main/web_release.js"></script>-->
@@ -21,14 +19,15 @@
     <div id="editor"></div>
 
     <br />
-    <h3>Example component with only the template</h3>
-    <test></test>
 
-    <br />
-    <h3>Example component using component tag</h3>
-    <address params="street: 'Main Street', city: 'Boston', state: 'MA', zip: 02145"></address>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.js"></script>
+    <script src="./scripts/generated/main/config.js"></script>
+    <script>
+        // Bootstrap the application
+        requirejs(["main/webux"], function (ux) {          
+                (new ux.WebUx($("#content").get(0))).start();
+        });        
+    </script>
 
-    <h3>Example component using component binding</h3>
-    <div data-bind="component: {name: 'address', params: { street: 'Main Street', city: 'Cambridge', state: 'MA', zip: 02145}}"></div>
 </body>
 </html>

@@ -11,7 +11,9 @@ var client = require("./client/gulpfile.js");
 var editor = require("./editor/gulpfile.js");
 var web = require("./web/gulpfile.js");
 var commonBuildTasks = require("./CommonBuildTasks");
+var tests = require("./Tests/gulpfile.js");
 
+var Server = require('karma').Server;
 
 gulp.task("compileClient", function () {
     return client.compile();
@@ -40,6 +42,20 @@ gulp.task('default', function () {
     sequencer("compileClient", "compileEditor", "compileWeb", "copyScripts");
 });
 
-gulp.task('release', ['default'], function () {
+gulp.task('release', function () {
     sequencer('default', 'rjs');
 });
+
+gulp.task("tests", function(cb) {
+    return tests.compile(); 
+});
+
+gulp.task("karma", function(cb) {
+    debugger;
+    debug("dir name: " + __dirname);
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+  }, cb).start();
+});
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.4.0</title>
+
+  <link rel="shortcut icon" type="image/png" href="../../3rdParty/Jasmine/jasmine-2.4.0/lib/jasmine_favicon.png">
+  <link rel="stylesheet" href="../../3rdParty/Jasmine/jasmine-2.4.0/lib/jasmine.css">
+
+  <script src="../../3rdParty/Jasmine/jasmine-2.4.0/lib/jasmine.js"></script>
+  <script src="../../3rdParty/Jasmine/jasmine-2.4.0/lib/jasmine-html.js"></script>
+  <script src="../../3rdParty/Jasmine/jasmine-2.4.0/lib/boot.js"></script>
+
+  <!-- include source files here... -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.js"></script>
+   <script>
+       window.requireConfig =  {
+            baseUrl: "./",
+            paths: {
+                ux: "./Scripts/",
+                main: "../../Web/Scripts/Generated/Main/",
+                client: "../../Web/Scripts/Generated/client/",
+                editor: "../../Web/Scripts/Generated/editor/",
+                jquery: "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min",
+                knockout: "http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.debug",
+                text: "http://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text",
+                image: 'http://cdnjs.cloudflare.com/ajax/libs/requirejs-plugins/1.0.3/image'
+            },
+            shim: {
+                jquery: {
+                    exports: '$'
+                },
+                knockout: {
+                    exports: 'ko' 
+                }
+            }
+        };
+
+    </script>
+  <!-- include spec files here... -->
+  <script src="../Generated/Web/Web.Spec.js"></script>
+
+</head>
+
+<body>
+    <div id="test_div"/>
+</body>
+</html>

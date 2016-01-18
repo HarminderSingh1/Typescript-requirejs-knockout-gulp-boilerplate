@@ -19,6 +19,7 @@ export class Editor {
 
     constructor(client: DLC.Client, parentElement: JQuery) {
         this.client = client;
+        
         this.element = parentElement;
 
         this.span = $("<span>");
@@ -26,7 +27,7 @@ export class Editor {
         (new logger.ConsoleLogger()).Log();
         this.button.click(() => {
             (<any>window).require(["../editor/Utils/Logger"], (log) => {
-                (new log.log()).toConsole();
+                (new log.ConsoleLogger()).Log();
             });
         });
 
